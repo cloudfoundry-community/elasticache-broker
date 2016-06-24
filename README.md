@@ -1,6 +1,7 @@
 # AWS ElastiCache Service Broker [![Build Status](https://travis-ci.org/apefactory/elasticache-broker.png)](https://travis-ci.org/apefactory/elasticache-broker)
 
-This is an **experimental** [Cloud Foundry Service Broker](https://docs.cloudfoundry.org/services/overview.html) for [Amazon ElastiCache  (SQS)](https://aws.amazon.com/elasticache/).
+This is an **experimental** [Cloud Foundry Service Broker](https://docs.cloudfoundry.org/services/overview.html) for [Amazon ElastiCache  ](https://aws.amazon.com/elasticache/).
+
 
 ## Disclaimer
 
@@ -35,7 +36,7 @@ $ cf push elasticache-broker
 
 ### Docker
 
-If you want to run the AWS SQS Service Broker on a Docker container, you can use the [apefactory/elasticache-broker](https://registry.hub.docker.com/u/apefactory/elasticache-broker/) Docker image.
+If you want to run the AWS ElastiCache Service Broker on a Docker container, you can use the [apefactory/elasticache-broker](https://registry.hub.docker.com/u/apefactory/elasticache-broker/) Docker image.
 
 ```
 $ docker run -d --name elasticache-broker -p 3000:3000 \
@@ -58,7 +59,7 @@ This broker can be deployed using the [AWS Service Broker BOSH Release](https://
 
 ## Configuration
 
-Refer to the [Configuration](https://github.com/cf-platform-eng/sqs-broker/blob/master/CONFIGURATION.md) instructions for details about configuring this broker.
+Refer to the [Configuration](https://github.com/apefactory/elasticache-broker/blob/master/CONFIGURATION.md) instructions for details about configuring this broker.
 
 This broker gets the AWS credentials from the environment variables `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY`. It requires a user with some [IAM](https://aws.amazon.com/iam/) & [Elasticache](https://aws.amazon.com/elasticache/) permissions. Refer to the [iam_policy.json](https://github.com/apefactory/elasticache-broker/blob/master/iam_policy.json) file to check what actions the user must be allowed to perform.
 
@@ -71,13 +72,13 @@ Configure and deploy the broker using one of the above methods. Then:
 1. Check that your Cloud Foundry installation supports [Service Broker API Version v2.6 or greater](https://docs.cloudfoundry.org/services/api.html#changelog)
 2. [Register the broker](https://docs.cloudfoundry.org/services/managing-service-brokers.html#register-broker) within your Cloud Foundry installation;
 3. [Make Services and Plans public](https://docs.cloudfoundry.org/services/access-control.html#enable-access);
-4. Depending on your Cloud Foundry settings, you migh also need to create/bind an [Application Security Group](https://docs.cloudfoundry.org/adminguide/app-sec-groups.html) to allow access to the SQS Queues.
+4. Depending on your Cloud Foundry settings, you migh also need to create/bind an [Application Security Group](https://docs.cloudfoundry.org/adminguide/app-sec-groups.html) to allow access to the different cluster caches.
 
 ### Integrating Service Instances with Applications
 
 Application Developers can start to consume the services using the standard [CF CLI commands](https://docs.cloudfoundry.org/devguide/services/managing-services.html).
 
-Depending on the [broker configuration](https://github.com/cf-platform-eng/sqs-broker/blob/master/CONFIGURATION.md#sqs-broker-configuration), Application Depevelopers can send arbitrary parameters on certain broker calls:
+Depending on the [broker configuration](https://github.com/apefactory/elasticache-broker/blob/master/CONFIGURATION.md#elasticache-broker-configuration), Application Developers can send arbitrary parameters on certain broker calls:
 
 #### Provision
 
