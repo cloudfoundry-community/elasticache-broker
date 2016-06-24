@@ -1,0 +1,24 @@
+#!/bin/bash
+
+set -e
+
+echo -e "\n Cleaning ElastiCache Service Broker Docker image..."
+docker rmi apefactory/elasticache-broker || true
+
+echo -e "\n Cleaning Builder Docker image..."
+docker rmi apefactory/elasticache-broker-builder || true
+
+echo -e "\n Creating Builder Docker image..."
+docker build -t apefactory/elasticache-broker-builder .
+
+echo -e "\n Creating ElastiCache Service Broker Docker image..."
+docker run -ti --rm --name elasticache-broker-builder \
+       -e DOCKER_HOST=${DOCKER_HOST} \
+       -e DOCKER_TLS_VERIFY=${DOCKER_TLS_VERIFY} \
+       -e DOCKER_CERT_PATH=${DOCKER_CERT_PATH} \
+       -v ${DOCKER_CERT_PATH}:${DOCKER_CERT_PATH} \
+       -v $(which docker):$(which docker) \
+       apefactory/elasticache-broker-builder
+
+echo -e "\n Cleaning Builder Docker image..."
+docker rmi apefactory/elasticache-broker-builder

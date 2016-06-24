@@ -1,0 +1,23 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Action": [
+        "elasticache:DescribeCacheClusters",
+        "elasticache:CreateCacheCluster",
+        "elasticache:ModifyCacheCluster",
+        "elasticache:DeleteCacheCluster",
+        "elasticache:AddTagsToResource"
+      ],
+      "Effect": "Allow",
+      "Resource": "*"
+    },
+    {
+      "Action": [
+        "iam:GetUser"
+      ],
+      "Effect": "Allow",
+      "Resource": "*"
+    }
+  ]
+}
