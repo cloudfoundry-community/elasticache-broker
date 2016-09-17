@@ -11,7 +11,7 @@ import (
 	"github.com/mitchellh/mapstructure"
 	"github.com/pivotal-golang/lager"
 
-	"github.com/apefactory/elasticache-broker/awselasticache"
+	"github.com/cloudfoundry-community/elasticache-broker/awselasticache"
 )
 
 const instanceIDLogKey = "instance-id"

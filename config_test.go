@@ -4,9 +4,9 @@ import (
 	. "github.com/onsi/ginkgo"
 	. "github.com/onsi/gomega"
 
-	. "github.com/apefactory/elasticache-broker"
+	. "github.com/cloudfoundry-community/elasticache-broker"
 
-	"github.com/apefactory/elasticache-broker/broker"
+	"github.com/cloudfoundry-community/elasticache-broker/broker"
 )
 
 var _ = Describe("Config", func() {

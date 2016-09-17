@@ -7,7 +7,7 @@ import (
 	"io/ioutil"
 	"os"
 
-	"github.com/apefactory/elasticache-broker/broker"
+	"github.com/cloudfoundry-community/elasticache-broker/broker"
 )
 
 type Config struct {

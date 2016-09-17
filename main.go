@@ -15,8 +15,8 @@ import (
 	"github.com/frodenas/brokerapi"
 	"github.com/pivotal-golang/lager"
 
-	"github.com/apefactory/elasticache-broker/awselasticache"
-	"github.com/apefactory/elasticache-broker/broker"
+	"github.com/cloudfoundry-community/elasticache-broker/awselasticache"
+	"github.com/cloudfoundry-community/elasticache-broker/broker"
 )
 
 var (

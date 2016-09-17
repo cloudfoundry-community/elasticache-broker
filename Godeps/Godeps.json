@@ -1,5 +1,5 @@
 {
-	"ImportPath": "github.com/apefactory/elasticache-broker",
+	"ImportPath": "github.com/cloudfoundry-community/elasticache-broker",
 	"GoVersion": "go1.6.2",
 	"Packages": [
 		"./..."

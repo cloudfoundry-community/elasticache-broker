@@ -1,7 +1,7 @@
 package fakes
 
 import (
-	"github.com/apefactory/elasticache-broker/awselasticache"
+	"github.com/cloudfoundry-community/elasticache-broker/awselasticache"
 )
 
 type FakeCacheCluster struct {
